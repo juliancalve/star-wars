@@ -1,0 +1,29 @@
+$color-white: #fff;
+$color-primary: #ffd100;
+$color-secondary: #202020;
+$color-tertiary: #ffee32;
+$color-fourth: #333533;
+$color-fifth: #d6d6d6;
+
+$color-sword-1: #0ff;
+$color-sword-2: #7851a9;
+$color-sword-3: rgb(120, 81, 169);
+$color-sword-4: red;
+
+$breakpoints: (
+  sm: 0px,
+  md: 576px,
+  lg: 768px,
+);
+
+@mixin neon($color1, $color2) {
+  box-shadow: 0 0 5px $color1, 0 0 10px $color1, 0 0 20px $color1,
+    0 0 40px $color2, 0 0 80px $color2, 0 0 90px $color2, 0 0 100px $color2,
+    0 0 150px $color2;
+}
+
+@mixin media-up($breakP) {
+  @media screen and (min-width: map-get($breakpoints, $breakP)) {
+    @content;
+  }
+}

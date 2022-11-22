@@ -1,0 +1,20 @@
+@import "../../../styles/variables.scss";
+
+.button {
+  border-radius: 12px;
+  background-color: $color-tertiary;
+  border: 2px solid $color-fourth;
+  padding: 5px 10px;
+  min-width: 60px;
+  font-weight: bold;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $color-primary;
+  }
+
+  &:disabled {
+    background-color: $color-fifth;
+    cursor: default;
+  }
+}

@@ -1,0 +1,25 @@
+@import "../../styles/variables.scss";
+
+.navbar {
+  &--container {
+    opacity: 0.8;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+    width: 100%;
+    padding-bottom: 5px;
+    box-sizing: border-box;
+    @include neon($color-white, $color-sword-1);
+    @include media-up(sm) {
+      flex-direction: column;
+    }
+    @include media-up(md) {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      padding: 5px;
+      height: 100px;
+    }
+  }
+}

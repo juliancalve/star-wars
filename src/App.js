@@ -1,25 +1,42 @@
-import logo from './logo.svg';
-import './App.css';
+import { useContext } from "react";
 
-function App() {
+import { Navbar } from "./components";
+import { Loader, Snackbar } from "./components/common";
+import { planetsTransform } from "./utils/transforms/planets.transform";
+import { getPlanets } from "./services/planets.service";
+import { useFetch } from "./hooks";
+
+import { StarWarsContext } from "./context/starWars.context";
+import Router from "./Router/Router";
+import GalaxyVideo from "./assets/videos/galaxy.mp4";
+import "./App.scss";
+
+const App = () => {
+  const { isLoading, setPlanets, error } = useContext(StarWarsContext);
+  const { resp } = useFetch({
+    service: getPlanets,
+    transform: planetsTransform,
+    callback: () => {
+      setPlanets(resp.planets);
+    },
+    callNow: true,
+  });
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Navbar />
+      {isLoading && <Loader />}
+      {error && <Snackbar message={error} />}
+      <video
+        className="App--background-video"
+        autoPlay
+        loop
+        muted
+        src={GalaxyVideo}
+      />
+      <Router />
     </div>
   );
-}
+};
 
 export default App;

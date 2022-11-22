@@ -1,0 +1,18 @@
+@import "../../../styles/variables.scss";
+
+.sheet {
+  &--container {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    border: 1px solid $color-sword-2;
+    border-radius: 12px;
+    max-width: 600px;
+    margin: auto;
+    @include neon($color-sword-1, $color-sword-2);
+  }
+  &--text {
+    display: flex;
+    justify-content: space-between;
+  }
+}

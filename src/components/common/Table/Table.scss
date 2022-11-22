@@ -1,0 +1,61 @@
+@import "../../../styles/variables.scss";
+
+.table {
+  display: block;
+  overflow-x: auto;
+  white-space: nowrap;
+  border-collapse: collapse;
+  font-size: 20px;
+  min-height: 400px;
+  &--container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 200px;
+  }
+  &--search {
+    margin-bottom: 25px;
+    align-self: flex-end;
+    @include media-up(sm) {
+      width: 100%;
+    }
+    @include media-up(md) {
+      width: 300px;
+    }
+  }
+  &--no-content {
+    height: 100%;
+  }
+  &--head {
+    th {
+      padding-right: 20px;
+    }
+  }
+  &--body {
+    tr {
+      &:hover {
+        background-color: $color-fourth;
+        color: $color-primary;
+        cursor: pointer;
+      }
+    }
+
+    th,
+    td {
+      border: 2px solid $color-white;
+      border-right: none;
+      border-left: none;
+      text-align: start;
+      margin-top: 5px;
+      padding: 7px;
+      width: 1%;
+    }
+  }
+
+  &--paginate-container {
+    margin-top: 20px;
+    display: flex;
+    justify-content: end;
+    gap: 20px;
+  }
+}

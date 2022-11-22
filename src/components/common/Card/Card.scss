@@ -1,0 +1,22 @@
+@import "../../../styles/variables.scss";
+
+.card {
+  &--container {
+    padding: 10px;
+    background-color: $color-secondary;
+    min-height: 70vh;
+    margin: auto;
+    border-radius: 12px;
+    opacity: 0.85;
+    box-sizing: border-box;
+    margin: 30px;
+    box-shadow: $color-tertiary 0px 10px 20px, $color-fifth 0px 6px 6px;
+    @include media-up(sm) {
+      width: 95%;
+    }
+    @include media-up(md) {
+      width: 75%;
+      padding: 20px;
+    }
+  }
+}
