@@ -24,7 +24,7 @@ export const useFetch = ({
     } catch (err) {
       console.log(err);
       setIsLoading(false);
-      setError("Ocurrió un error!");
+      setError("Oops an error occurred! Time out");
     }
   };
 
